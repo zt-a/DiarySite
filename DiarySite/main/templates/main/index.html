@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="left">
+    <ul class="history" id="history">
+        {% for diary in diaries.reverse %}
+            <li>
+                <br>
+                [<span class="time_create_diary">{{ diary.time_create }}</span>] <span class="content_diary">: {{ diary.content }}</span>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="inputs">
+        <form action="{% url 'home' %}" class="form-home" method="post" id="form-home">
+            {% csrf_token %}
+            {{ form.content }}
+            <button type="button" class="btn btn-outline-secondary clear-button" id="clearButton" onclick="clearField('field')">Clear</button>
+            <button class="btn btn-outline-secondary btn-sub-dairy" type="submit">Добавить</button>
+        </form>
+    </div>
+</div>
+
+<div class="right">
+    <ul class="lists">
+        {% for diary in diaries %}
+            <li>
+                <br>
+                <span class="time_create_diary">{{ diary.time_create }}</span>
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="date_time">
+        <p id="date"></p>
+        <p id="time"></p>
+        <p id="in_network"></p>
+<!--        <h3>DiarySite</h3>-->
+    </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+    window.onload = function() {
+        displayDateTime;
+        if(sessionStorage.getItem('post_data')) {
+            sessionStorage.removeItem('post_data');
+        }
+    }
+    setInterval(displayDateTime, 1000);
+
+    var scrollContainer = document.getElementById("history");
+    scrollContainer.scrollTop = scrollContainer.scrollHeight;
+
+    document.getElementById("clearButton").addEventListener("click", function(e){
+        e.preventDefault();
+        document.getElement("form-home").reset();
+    });
+{% endblock %}

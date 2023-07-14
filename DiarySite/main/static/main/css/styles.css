@@ -1,0 +1,283 @@
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 8px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #3a3a3a;
+    border-radius: 9em;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 9em;
+    box-shadow: inset 1px 1px 10px #f3faf7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: silver;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background-color: #444;
+    border-radius: 9em;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background-color: #444;
+    border-radius: 9em;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background-color: #444;
+    border-radius: 9em;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background-color: #444;
+    border-radius: 9em;
+}
+
+
+.clear-button {
+    background: white;
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: solid silver 2px;
+
+}
+
+.clear-button::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+.clear-button::-webkit-search-decoration,
+.clear-button::-webkit-search-cancel-button,
+.clear-button::-webkit-search-results-button,
+.clear-button::-webkit-search-results-decoration {
+    display: none;
+}
+
+.clear-button::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.clear-button.focus {
+    outline: none;
+}
+
+
+* {
+    list-style: none;
+}
+
+body {
+    color: white;
+    width: 1000px;
+    margin: auto;
+}
+
+#header {
+    background-color: #121212;
+    min-height: 75px;
+    display: flex;
+    border-radius: 10px;
+}
+
+.nav {
+    margin: auto;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    font-size: 1.15em
+}
+
+.nav ul li {
+    font-size: 1.25rem;
+}
+
+.mainName {
+    margin-left: 100px;
+    max-width: 150px;
+}
+
+.left-block {
+    float: left;
+    margin: auto;
+}
+
+#main {
+    min-height: 563px;
+    height: 100%;
+    background-color: #222;
+    border-radius: 10px;
+}
+
+.left {
+    float: left;
+    width: 65%;
+    margin-top: 10px;
+    margin: 12px;
+}
+
+.right {
+    float: right;
+    width: 30%;
+    height: 400px;
+    margin: 12px;
+}
+
+.lists {
+    background-color: #444;
+    border-radius: 10px;
+    height: 100%;
+    border-top: solid silver 2px;
+    border-left: solid silver 2px;
+    padding: 2px;
+    overflow: scroll;
+}
+
+.setting_diary {
+    background-color: #444;
+    border-radius: 10px;
+    height: 100%;
+    border-top: solid silver 2px;
+    border-left: solid silver 2px;
+    padding: 2px;
+    overflow: scroll;
+}
+
+
+.date_time {
+    background-color: #444;
+    border-radius: 10px;
+    height: 130px;
+    margin-top: 2px;
+    border: solid silver 2px;
+    padding: 10px;
+}
+
+.history {
+    width: 650px;
+    height: 480px;
+    padding: 2px;
+    margin: auto;
+    background: #333;
+    border-top: solid silver 2px;
+    border-left: solid silver 2px;
+    border-radius: 10px;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.time_create_diary {
+    color: blue;
+}
+
+
+
+.content_diary {
+    width: 500px;
+    color: #ccc;
+    height: auto;
+    left: 300xp;
+}
+
+.inputs {
+    width: 650px;
+    height: 50px;
+    padding: 2px;
+    margin: auto;
+    background: #444;
+    border: solid silver 2px;
+    border-radius: 10px;
+    display: flex;
+}
+
+.add-input {
+    width: 485px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form-home {
+    display: flex;
+}
+
+.btn-sub-diary {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#footer {
+    background-color: #121212;
+    min-height: 75px;
+    border-radius: 10px;
+}
+
+.copy {
+    margin: auto;
+}
+
+.address_footer {
+    float: right;
+    margin: auto;
+    margin-left: 50px;
+}
+
+#date, #time {
+    color: #ccc;
+}
+
+#in_network {
+    color: green;
+}
+
+.notes_form {
+    margin: auto;
+}
+
+.form-btn-submit {
+    margin-left: 500px;
+}
+
+.form-error {
+    color: red;
+}
+
+.form-input-p {
+    display: block;
+    text-align: start;
+    width: 400px;
+    margin: auto;
+}
+
+.contactUs {
+    margin: auto;
+    text-align: center;
+}
+
+
+.icons {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+
+.icons li {
+    margin: 10px;
+}
+
+.contactUsForm {
+    width: 50%;
+    margin: auto;
+}

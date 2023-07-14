@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="left">
+    <ul class="history">
+    History
+        {% for diary in diaries %}
+            <li>
+                <br>
+                [<span class="time_create_diary">{{ diary.time_create }}</span>] <span class="content_diary">: {{ diary.content }}</span>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="right">
+  <div class="setting_diary">
+    Setting_diary
+  </div>
+</div>
+<br>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

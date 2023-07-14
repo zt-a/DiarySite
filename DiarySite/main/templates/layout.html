@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+{% load bootstrap5 %}
+{% load static %}
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">-->
+    <link href="{% static 'main/src/bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+    <!--    <link rel="shortcut icon" href="{% static '' %}" type="image/x-icon">-->
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    <script src="{% static 'main/js/jquery-3.6.3.min.js' %}"></script>
+    <script src="{% static 'main/js/scripts.js' %}"></script>
+</head>
+<body style="background: url({% static 'main/img/6.jpg' %}) repeat-y;">
+<header class="header" id="header">
+    <h3 class="mainName"><a href="{% url 'home' %}">DiarySite</a></h3>
+    <aside class="nav">
+        <ul>
+            <li><a href="{% url 'diary_page' %}"> Diary </a></li> &nbsp;
+            <li><a href="{% url 'notes_page' %}"> Notes </a></li> &nbsp;
+            <li><a href="{% url 'aboutUs' %}">About Us</a></li> &nbsp;
+            <li><a href="{% url 'contactUs' %}">Contact Us</a></li> &nbsp;
+        </ul>
+    </aside>
+    <div class="left-block">
+        <a href="{% url 'add_notes_page' %}">
+            <button class='btn btn-primary add-btn' type="button">Добавить запись</button>
+        </a>
+    </div>
+</header>
+<main class="main" id="main">
+    <content>
+        {% block content %}
+        {% endblock %}
+    </content>
+</main>
+<footer class="footer" id="footer">
+    <span class="copy">&copy; 2023 Dev: Zhyrgal Tagaibekov</span>
+    <address class="address_footer">
+        <div class="contact_us">
+            <a class="email" href="mailto: zt20061113@gmail.com">E-mail: zt20061113@gmail.com</a>
+            <br>
+            <a href="tel: +996701500422">Тел: +996701500422</a>
+        </div>
+    </address>
+</footer>
+<script>{% block scripts %}{% endblock %}</script>
+
+</body>
+
+</html>

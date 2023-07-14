@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+    <form class="notes_form" action="{% url 'add_notes_page' %}" method="post">
+        {% csrf_token %}
+        <div class="form-errors">{{ form.non_field_errors }}</div>
+
+        {% for f in form %}
+        <p class="form-input-p"><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label> {{ f }} </p>
+        <div class="form-text text-muted">{{ f.errors }}</div>
+        <br>
+        {% endfor %}
+        <button class="btn btn-primary form-btn-submit" type="submit" >Добавить запись</button>
+    </form>
+
+<br>
+
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="left">
+    <ul class="history">
+    Notes
+        {% for note in notes %}
+            <li>
+                <br>
+                [<span class="time_create_diary">{{ note.title }}</span>] <span class="content_diary">: {{ note.content }}</span>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="right">
+  <div class="setting_diary">
+    Setting_notes
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
